@@ -9,3 +9,8 @@
 
 Live: https://lustrous-taffy-2d0686.netlify.app/
 ![Preview](https://i.imgur.com/pEmlOiu.png)
+
+### TODO:
+
+-   Limpiar código
+-   Ajustes visuales
