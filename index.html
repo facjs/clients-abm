@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <script src="assets/js/main.js" defer></script>
+        <title>ABM - Clientes</title>
+    </head>
+    <body>
+        <main class="main">
+            <h1 class="main__title">DEMO ABM CLIENTES</h1>
+            <button class="button newclient__button">Agregar nuevo cliente</button>
+            <section class="container section table">
+                <div class="table__container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>RUT</th>
+                                <th>Tipo</th>
+                                <th>Teléfono</th>
+                                <th>Activo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clients__table">
+                            <!--Gets dinamically generated with renderClients()-->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="container section hidden form">
+                <div class="form__container">
+                    <form action="" id="form">
+                        <div class="form__group">
+                            <label for="name">Nombre:</label>
+                            <input
+                                type="text"
+                                pattern="[A-Za-z]"
+                                maxlength="10"
+                                id="name"
+                                name="name"
+                                required
+                            />
+                        </div>
+                        <div class="form__group">
+                            <label for="lastName">Apellido:</label>
+                            <input
+                                type="text"
+                                pattern="[A-Za-z]"
+                                maxlength="10"
+                                id="lastName"
+                                name="lastName"
+                                required
+                            />
+                        </div>
+                        <div class="form__group">
+                            <label for="rut">RUT:</label>
+                            <input
+                                type="text"
+                                maxlength="10"
+                                pattern="[0-9]+"
+                                id="rut"
+                                name="rut"
+                            />
+                        </div>
+                        <div class="form__group">
+                            <label for="type">Tipo:</label>
+                            <select id="type" name="type" required>
+                                <option value="">Seleccione...</option>
+                                <option value="Empresa">Empresa</option>
+                                <option value="Consumidor">Consumidor Final</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="phone">Teléfono:</label>
+                            <input
+                                type="text"
+                                maxlength="10"
+                                pattern="[0-9]+"
+                                id="phone"
+                                name="phone"
+                                required
+                            />
+                        </div>
+                        <div class="form__group checkbox">
+                            <input type="checkbox" id="active" name="active" />
+                            <label for="activo">Activo</label>
+                        </div>
+                        <div class="button__container">
+                            <button type="submit" class="button submit__button">Enviar</button>
+                            <button class="button back__button">Atrás</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

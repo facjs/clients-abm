@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* TODO: HAVE TO ACTUALLY MAKE IT RESPONSIVE */
+
+:root {
+    /*========== Colors ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --background-primary: hsl(0, 0%, 100%);
+    --text-primary: hsl(0, 0%, 0%);
+    --background-button: hsl(201, 51%, 69%);
+    --background-button-alt: hsl(201, 51%, 59%);
+    --background-edit-button: hsl(147, 34%, 64%);
+    --background-edit-button-alt: hsl(147, 34%, 54%);
+    --background-delete-button: hsl(345, 73%, 59%);
+    --background-delete-button-alt: hsl(345, 73%, 49%);
+
+    /*========== Radius ==========*/
+    --element-radius: 8px;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 900;
+
+    /*========== Font and typography ==========*/
+    --body-font: sans-serif;
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+
+    /*========== Responsive typography ==========*/
+
+    @media screen and (min-width: 992px) {
+        :root {
+            --biggest-font-size: 4rem;
+            --h1-font-size: 2.25rem;
+            --h2-font-size: 1.5rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: 0.875rem;
+            --smaller-font-size: 0.813rem;
+        }
+    }
+}
+
+/*========== Base ==========*/
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 3rem 0 0 0;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+button,
+input {
+    outline-color: transparent;
+    border: none;
+}
+
+.section {
+    padding: 3.5rem 0 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    display: grid;
+    place-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/*=========== Buttons ===========*/
+.button__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.button {
+    background-color: var(--background-button);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--normal-font-size);
+    transition: background 0.3s ease-in;
+}
+
+.button:hover {
+    background-color: var(--background-button-alt);
+}
+
+.submit__button:hover {
+    background: var(--background-edit-button-alt);
+}
+
+.submit__button {
+    background-color: var(--background-edit-button);
+}
+
+.back__button {
+    background-color: var(--background-delete-button);
+}
+
+.back__button:hover {
+    background-color: var(--background-delete-button-alt);
+}
+
+.newclient__button {
+    place-self: center;
+    width: 200px;
+}
+
+.edit__button,
+.delete__button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+}
+
+.edit__button {
+    background-color: var(--background-edit-button);
+}
+
+.delete__button {
+    background-color: var(--background-delete-button);
+}
+
+.edit__button:hover {
+    background-color: var(--background-edit-button-alt);
+}
+
+.delete__button:hover {
+    background-color: var(--background-delete-button-alt);
+}
+
+.action__buttons {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/*========== Checkbox ==========*/
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    display: grid;
+    place-content: center;
+}
+
+input[type='checkbox']::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--background-button-alt);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type='checkbox']:checked::before {
+    transform: scale(1);
+}
+
+input[type='checkbox'] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: red;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid hsl(0, 0%, 14%);
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+}
+
+.form-control + .form-control {
+    margin-top: 1em;
+}
+
+/*========== Main ==========*/
+.main {
+    display: grid;
+    place-content: center;
+}
+
+.main__title {
+    text-align: center;
+    font-size: normal;
+    font-weight: var(--font-semi-bold);
+}
+
+/*========== Form ==========*/
+.form__container {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: var(--element-radius);
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type='text'],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.checkbox label {
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+/*========== Table ==========*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    outline: none;
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+table th,
+table td {
+    padding: 1rem 4rem;
+    margin-left: 1rem;
+    text-align: center;
+    background: hsl(0, 7%, 93%);
+}
+
+table th {
+    background-color: hsl(0, 0%, 14%);
+    text-align: center;
+    padding: 2rem;
+    color: #fff;
+    transition: color 0.3s ease-in;
+}
+
+table th:hover {
+    color: hsl(345, 73%, 59%);
+}
+
+/*========== Animations ==========*/
+.form,
+.table {
+    animation: appears 3s alternate;
+}
+
+/*========== Keyframes ==========*/
+@keyframes appears {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
