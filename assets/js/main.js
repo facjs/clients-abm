@@ -246,7 +246,7 @@ newButton.addEventListener('click', (evt) => {
 submitButton.addEventListener('click', (evt) => {
     evt.preventDefault();
 
-    if (validateForm() === false) return;
+    if (!validateForm()) return;
 
     if (isEditing) {
         toggleForm();
