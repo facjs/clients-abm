@@ -14,3 +14,4 @@ Live: https://lustrous-taffy-2d0686.netlify.app/
 
 -   Limpiar código
 -   Ajustes visuales
+-   La API debería ir en algún lugar como .env en vez de estar a simple vista
