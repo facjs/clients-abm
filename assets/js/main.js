@@ -2,7 +2,7 @@
 
 // TODO: General code cleanup and some improvements
 
-const API_KEY = '265590c80dfd4269b1d071f24d00709e'; // Have to change it upon 100 requests or 24 hours
+const API_KEY = '827ec624f4364af79116570eca4eb314'; // Have to change it upon 100 requests or 24 hours
 const API_URL = 'https://crudcrud.com/api/' + API_KEY + '/clients'; // REST resource is /clients
 
 // Array to store clients
